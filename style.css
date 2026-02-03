@@ -134,3 +134,13 @@ footer {
   background: #2c3e50;
   color: white;
 }
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
