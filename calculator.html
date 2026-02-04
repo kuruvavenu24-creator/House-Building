@@ -11,27 +11,16 @@
 <body>
 
   <header class="bg-dark text-white text-center p-5">
-    <h1>🏡 House Cost Calculator</h1>
-    <p>Estimate Your Construction Budget</p>
+    <h1>💰 House Cost Calculator</h1>
+    <p>Estimate Total Construction + Material Cost</p>
   </header>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">HouseSite</a>
-      <div>
-        <a class="btn btn-light btn-sm" href="index.html">Home</a>
-        <a class="btn btn-light btn-sm" href="gallery.html">Gallery</a>
-        <a class="btn btn-light btn-sm" href="contact.html">Contact</a>
-      </div>
-    </div>
-  </nav>
 
   <main class="container my-5 fade-in">
 
     <div class="card p-4 shadow">
-      <h2>Calculate Construction Cost</h2>
+      <h2>Total Construction Cost</h2>
 
-      <label class="form-label mt-3">Enter Area (Square Feet):</label>
+      <label class="form-label mt-3">Enter Area (Sq.Ft):</label>
       <input type="number" id="area" class="form-control" placeholder="Example: 1200">
 
       <label class="form-label mt-3">Cost Per Sq.Ft (₹):</label>
@@ -42,6 +31,31 @@
       </button>
 
       <h3 class="text-success text-center mt-4" id="result"></h3>
+    </div>
+
+    <!-- Material Breakdown -->
+    <div class="card p-4 shadow mt-5">
+      <h2>Material Cost Breakdown (Approx.)</h2>
+
+      <p>This is an estimated breakdown of construction materials:</p>
+
+      <table class="table table-bordered text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Material</th>
+            <th>Percentage</th>
+            <th>Estimated Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cement</td><td>15%</td><td id="cement"></td></tr>
+          <tr><td>Steel</td><td>20%</td><td id="steel"></td></tr>
+          <tr><td>Bricks</td><td>10%</td><td id="bricks"></td></tr>
+          <tr><td>Sand</td><td>8%</td><td id="sand"></td></tr>
+          <tr><td>Labor</td><td>25%</td><td id="labor"></td></tr>
+          <tr><td>Finishing</td><td>22%</td><td id="finish"></td></tr>
+        </tbody>
+      </table>
     </div>
 
   </main>
@@ -58,7 +72,15 @@
       let total = area * rate;
 
       document.getElementById("result").innerHTML =
-        "Estimated Cost: ₹" + total.toLocaleString();
+        "Estimated Total Cost: ₹" + total.toLocaleString();
+
+      // Breakdown Percentages
+      document.getElementById("cement").innerHTML = "₹" + (total * 0.15).toLocaleString();
+      document.getElementById("steel").innerHTML = "₹" + (total * 0.20).toLocaleString();
+      document.getElementById("bricks").innerHTML = "₹" + (total * 0.10).toLocaleString();
+      document.getElementById("sand").innerHTML = "₹" + (total * 0.08).toLocaleString();
+      document.getElementById("labor").innerHTML = "₹" + (total * 0.25).toLocaleString();
+      document.getElementById("finish").innerHTML = "₹" + (total * 0.22).toLocaleString();
     }
   </script>
 
