@@ -1,16 +1,9 @@
-const sections = document.querySelectorAll(".fade-in");
+const items = document.querySelectorAll(".fade-in");
 
 window.addEventListener("scroll", () => {
-  sections.forEach(section => {
-    const pos = section.getBoundingClientRect().top;
-    if (pos < window.innerHeight - 100) {
-      section.classList.add("show");
+  items.forEach(i => {
+    if (i.getBoundingClientRect().top < window.innerHeight - 100) {
+      i.classList.add("show");
     }
-  });
-});
-
-window.addEventListener("load", () => {
-  sections.forEach(section => {
-    section.classList.add("show");
   });
 });
