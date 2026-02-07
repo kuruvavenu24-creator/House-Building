@@ -1,60 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>House Building</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian House Construction</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<style>
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+}
+
+/* Navbar */
+nav {
+  background: #1e2a38;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00c3ff;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #1e2a38;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+  padding: 80px 20px;
+}
+
+/* Images */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Calculator */
+input {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #1e2a38;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #00c3ff;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e2a38;
+  color: white;
+}
+
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="bg-dark text-white text-center p-5">
-  <h1>🏠 Building a House</h1>
-  <p>Your Dream Home Starts With a Plan</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <h1>🏠 Indian House Construction Guide</h1>
+  <p>With Updated Material Rates (2025-2026)</p>
+</div>
 
-<!-- NAVBAR (FULL SITE) -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">HouseSite</a>
-
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="calculator.html">Calculator</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+<!-- NAVIGATION -->
+<nav>
+  <ul>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#rates">Material Rates</a></li>
+    <li><a href="#calculator">Cost Calculator</a></li>
+  </ul>
 </nav>
 
-<main class="container my-5">
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>🏗️ House Construction Images</h2>
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+  </div>
+</section>
 
-  <section class="card p-4 shadow fade-in">
-    <h2>About House Construction</h2>
-    <p>
-      Building a house involves planning, budgeting, design, material selection,
-      construction, and finishing.
-    </p>
-    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
-         class="img-fluid rounded mt-3">
-  </section>
+<!-- MATERIAL RATES -->
+<section id="rates">
+  <h2>🧱 Indian Material Rates (2025-2026)</h2>
 
-</main>
+  <div class="card">
+    Cement: ₹400 per 50kg bag
+  </div>
 
-<footer class="bg-dark text-white text-center p-3">
-  © 2026 House Website
+  <div class="card">
+    Steel (TMT): ₹70 per kg
+  </div>
+
+  <div class="card">
+    Bricks: ₹5 per brick
+  </div>
+
+  <div class="card">
+    Sand: ₹50 per cubic foot
+  </div>
+
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <h2>💰 Construction Cost Calculator</h2>
+
+  <p>Enter House Size (in Square Feet)</p>
+  <input type="number" id="area" placeholder="Enter sq ft">
+  <button onclick="calculateCost()">Calculate</button>
+
+  <div class="result" id="result"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Indian Construction Website | Created for Learning
 </footer>
 
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+/* Animation on Scroll */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* Calculator Function */
+function calculateCost() {
+
+  let area = document.getElementById("area").value;
+
+  if(area <= 0){
+    alert("Enter valid square feet");
+    return;
+  }
+
+  // Material Estimation (Industry Approx)
+  let cementBags = area * 0.4;
+  let steelKg = area * 4;
+  let bricks = area * 8;
+  let sandCft = area * 1.8;
+
+  // Rates (2025 India)
+  let cementCost = cementBags * 400;
+  let steelCost = steelKg * 70;
+  let brickCost = bricks * 5;
+  let sandCost = sandCft * 50;
+
+  let total = cementCost + steelCost + brickCost + sandCost;
+
+  document.getElementById("result").innerHTML =
+    "Estimated Material Cost: ₹" + total.toLocaleString() +
+    "<br><br>Cement Bags: " + Math.round(cementBags) +
+    "<br>Steel (kg): " + Math.round(steelKg) +
+    "<br>Bricks: " + Math.round(bricks) +
+    "<br>Sand (cu ft): " + Math.round(sandCft);
+}
+
+</script>
+
 </body>
 </html>
