@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cost Calculator</title>
+    <title>Advanced Cost Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -16,14 +17,59 @@
     </ul>
 </nav>
 
-<h1 class="page-title">🧮 Construction Cost Calculator</h1>
+<h1 class="page-title">🧮 Advanced Construction Cost Calculator</h1>
 
 <div class="calculator-box">
-    <input type="number" id="area" placeholder="Total Area (sq ft)">
-    <input type="number" id="material" value="1400">
-    <input type="number" id="labour" value="600">
-    <button onclick="calculateCost()">Calculate</button>
+
+    <label>Select State</label>
+    <select id="state" onchange="updateRates()">
+        <option value="">-- Select State --</option>
+        <option>Delhi</option>
+        <option>Maharashtra</option>
+        <option>Karnataka</option>
+        <option>Tamil Nadu</option>
+        <option>Telangana</option>
+        <option>Uttar Pradesh</option>
+        <option>Kerala</option>
+        <option>Gujarat</option>
+        <option>Rajasthan</option>
+        <option>West Bengal</option>
+        <option>Punjab</option>
+        <option>Haryana</option>
+        <option>Bihar</option>
+        <option>Madhya Pradesh</option>
+        <option>Odisha</option>
+        <option>Assam</option>
+        <option>Andhra Pradesh</option>
+        <option>Jharkhand</option>
+        <option>Chhattisgarh</option>
+        <option>Goa</option>
+    </select>
+
+    <label>Construction Type</label>
+    <select id="type">
+        <option value="basic">Basic</option>
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+    </select>
+
+    <label>Total Area (sq ft)</label>
+    <input type="number" id="area" placeholder="Enter total area">
+
+    <label>Material Rate (₹ per sq ft)</label>
+    <input type="number" id="material">
+
+    <label>Labour Rate (₹ per sq ft)</label>
+    <input type="number" id="labour">
+
+    <button onclick="calculateCost()">Calculate Total Cost</button>
+
     <div id="resultCost"></div>
+
+</div>
+
+<div style="max-width:500px;margin:40px auto;">
+    <canvas id="costChart"></canvas>
 </div>
 
 <script src="script.js"></script>
