@@ -1,76 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Advanced Cost Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>Advanced Calculator</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <nav>
-    <h2>🏠 Dream House Builder</h2>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="plans.html">House Plans</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="calculator.html">Cost Calculator</a></li>
-    </ul>
+<h2>🏠 Dream House Pro</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="plans.html">Plans</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="calculator.html">Calculator</a></li>
+</ul>
 </nav>
 
-<h1 class="page-title">🧮 Advanced Construction Cost Calculator</h1>
+<h1 class="page-title">Smart Cost Calculator</h1>
 
 <div class="calculator-box">
 
-    <label>Select State</label>
-    <select id="state" onchange="updateRates()">
-        <option value="">-- Select State --</option>
-        <option>Delhi</option>
-        <option>Maharashtra</option>
-        <option>Karnataka</option>
-        <option>Tamil Nadu</option>
-        <option>Telangana</option>
-        <option>Uttar Pradesh</option>
-        <option>Kerala</option>
-        <option>Gujarat</option>
-        <option>Rajasthan</option>
-        <option>West Bengal</option>
-        <option>Punjab</option>
-        <option>Haryana</option>
-        <option>Bihar</option>
-        <option>Madhya Pradesh</option>
-        <option>Odisha</option>
-        <option>Assam</option>
-        <option>Andhra Pradesh</option>
-        <option>Jharkhand</option>
-        <option>Chhattisgarh</option>
-        <option>Goa</option>
-    </select>
+<select id="state" onchange="updateRates()">
+<option value="">Select State</option>
+<option>Delhi</option>
+<option>Maharashtra</option>
+<option>Karnataka</option>
+<option>Tamil Nadu</option>
+<option>Telangana</option>
+<option>Kerala</option>
+<option>Gujarat</option>
+<option>Rajasthan</option>
+<option>West Bengal</option>
+<option>Punjab</option>
+<option>Haryana</option>
+<option>Bihar</option>
+<option>Madhya Pradesh</option>
+<option>Odisha</option>
+<option>Assam</option>
+<option>Andhra Pradesh</option>
+<option>Jharkhand</option>
+<option>Chhattisgarh</option>
+<option>Goa</option>
+</select>
 
-    <label>Construction Type</label>
-    <select id="type">
-        <option value="basic">Basic</option>
-        <option value="standard">Standard</option>
-        <option value="premium">Premium</option>
-    </select>
+<select id="quality">
+<option value="1">Basic</option>
+<option value="1.15">Standard</option>
+<option value="1.30">Premium</option>
+</select>
 
-    <label>Total Area (sq ft)</label>
-    <input type="number" id="area" placeholder="Enter total area">
+<input type="number" id="area" placeholder="Total Area (sq ft)">
+<input type="number" id="material" placeholder="Material Rate">
+<input type="number" id="labour" placeholder="Labour Rate">
 
-    <label>Material Rate (₹ per sq ft)</label>
-    <input type="number" id="material">
+<button onclick="calculateCost()">Calculate</button>
 
-    <label>Labour Rate (₹ per sq ft)</label>
-    <input type="number" id="labour">
-
-    <button onclick="calculateCost()">Calculate Total Cost</button>
-
-    <div id="resultCost"></div>
-
+<div id="resultCost"></div>
 </div>
 
-<div style="max-width:500px;margin:40px auto;">
-    <canvas id="costChart"></canvas>
-</div>
+<canvas id="costChart" style="max-width:500px;margin:40px auto;"></canvas>
 
 <script src="script.js"></script>
 
