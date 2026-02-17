@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI 360° House Preview</title>
+<title>AI 360° House Rooms</title>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -17,15 +17,23 @@
 </ul>
 </nav>
 
-<h1 class="page-title">🤖 AI Smart House + 360° Preview</h1>
+<h1 class="page-title">🤖 AI Smart House + 360° Rooms</h1>
 
 <div style="max-width:500px;margin:20px auto;text-align:center;">
-    <input type="number" id="budget" placeholder="Enter Budget (₹)">
-    <input type="number" id="family" placeholder="Family Members">
-    <button onclick="predictPlan()">Predict Plan</button>
+<input type="number" id="budget" placeholder="Enter Budget (₹)">
+<input type="number" id="family" placeholder="Family Members">
+<button onclick="predictPlan()">Predict Plan</button>
 </div>
 
 <div id="prediction" style="text-align:center;margin-top:20px;"></div>
+
+<!-- ROOM SELECTOR -->
+<div style="text-align:center;margin-top:20px;">
+<button onclick="loadRoom('hall')">Hall</button>
+<button onclick="loadRoom('kitchen')">Kitchen</button>
+<button onclick="loadRoom('bedroom')">Bedroom</button>
+<button onclick="loadRoom('bathroom')">Bathroom</button>
+</div>
 
 <div id="panorama" style="width:100%;height:500px;margin-top:30px;"></div>
 
